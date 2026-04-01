@@ -11,17 +11,10 @@ class Partida
 
 
     public Partida()
-    {
-        Console.WriteLine("Vamos começar o jogo\n");
-        EscolherDificuldade();
-        Console.WriteLine($"A Dificuldade é {dificuldade}");
-        GerarNumero();
-        Console.WriteLine($"O número é {num} e o limiteChute é {limiteChute}");
-        Chutar();
-
+    { 
     }
 
-    public int Num
+    private int Num
     {
         get { return num; }
         set { num = value; }
@@ -45,7 +38,7 @@ class Partida
         set { tentativas = value; }
     }
 
-    private void EscolherDificuldade()
+    public void EscolherDificuldade()
     {
         Console.WriteLine("Escolha a dificuldade");
         
@@ -66,7 +59,7 @@ class Partida
         }
     }
 
-    private void GerarNumero()
+    public void GerarNumero()
     {
         switch (dificuldade)
         {
@@ -82,7 +75,7 @@ class Partida
         }
     }
 
-    private void Chutar()
+    public void Chutar()
     {
         Console.WriteLine("DEFINIMOS A DIFICULDADE, VAMOS JOGAR!!!\n");
         while(!acertou)
@@ -109,5 +102,13 @@ class Partida
 
         }
 
+    }
+
+    public void Jogar()
+    {
+        Console.WriteLine("Vamos começar o jogo\n");
+        EscolherDificuldade();
+        GerarNumero();
+        Chutar();
     }
 }

@@ -4,9 +4,11 @@ Ranking ranking = new Ranking();
 while (continuar)
 {
     Partida partida = new Partida();
+    partida.Jogar();
+    
     ranking.AcrescentarPontuacao(partida.Tentativas);
     ranking.MostrarPontuacao();
-    Console.Write("Novo Jogo? (S/N)\n-> ");
+    Console.Write("\nNovo Jogo? (S/N)\n-> ");
     while (true)
     {
         string? entrada = Console.ReadLine();
